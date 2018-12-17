@@ -2,6 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as anim
 
+number_of_corners = 200
+divisor = float(2.5)
 
 def get_cor_point(divisions, multiple, current):
     return np.cos(np.pi+(2*np.pi/divisions)*current*multiple), np.sin((2*np.pi/divisions)*current*multiple)
@@ -24,19 +26,11 @@ def plt_cont():
 
     def update(i):
         ax.clear()
-        points = connect_points(i/10.0, 75)
+        points = connect_points(i/divisor, number_of_corners)
         for i in range(len(points[0])):
             ax.plot(points[0][i],
             points[1][i], 'ro-')
     a = anim.FuncAnimation(fig, update, frames=1000, repeat=False, interval = 10)
     plt.show()
-
-#points = connect_points(2.3, 100)
-#print(points)
-#x, y = get_xy(ez_theta)
-#plt.plot(x, y)
-#for i in range(len(points[0])):
- #   plt.plot(points[0][i],
-  #           points[1][i], 'ro-')
-#plt.show()
+    
 plt_cont()
