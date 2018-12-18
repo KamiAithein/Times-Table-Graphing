@@ -2,8 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as anim
 
-number_of_corners = 200
-divisor = float(2.5)
+number_of_corners = 150
+divisor = float(10)
 
 def get_cor_point(divisions, multiple, current):
     return np.cos(np.pi+(2*np.pi/divisions)*current*multiple), np.sin((2*np.pi/divisions)*current*multiple)
